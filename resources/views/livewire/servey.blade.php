@@ -8,7 +8,8 @@
 
     <div class="{{$udid?'opacity-0':'opacity-100'}} mx-32 my-10">
         <x-input wire:model="udid" id="udid" label="Scan Wrist Band"
-                class="text-center"
+                class="text-center bg-transparent 
+                focus:ring-transparent focus:outline-none focus:border-transparent"
                 placeholder="Please, scan your wrist band" autofocus/>
     </div>
 
