@@ -15,6 +15,7 @@
 
     @if ($udid)
     <div class="w-full h-80 flex justify-around items-center my-16">
+        {{$udid}}
         <x-button  wire:click="save(1)" spinner="save" loading-delay="longest"
         class="servey-btn">
             <img src="/assets/images/score-1.png" alt="">
