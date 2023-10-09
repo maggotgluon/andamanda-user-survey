@@ -43,6 +43,8 @@ class Servey extends Component
                 $title = 'Error',
                 $description = "this wrist band already regis"
             );
+            redirect(route('home'));
+
             $this->emit('change-focus');
         }
 
@@ -73,6 +75,7 @@ class Servey extends Component
                 $description = "this wrist band already regis"
             );
             $this->udid=null;
+            redirect(route('home'));
             $this->emit('change-focus');
         }
         // $validate = $this->validate([
@@ -103,6 +106,7 @@ class Servey extends Component
             $description = $n_description
         );
         $this->udid=null;
+        redirect(route('home'));
         $this->emit('change-focus');
     }
 }

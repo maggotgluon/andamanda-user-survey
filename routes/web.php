@@ -23,7 +23,7 @@ use Asantibanez\LivewireCharts\Models\TreeMapChartModel;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
 

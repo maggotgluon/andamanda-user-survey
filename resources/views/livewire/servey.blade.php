@@ -55,8 +55,10 @@
 
     @push('scripts')
     <script>
+        console.log('script load')
     window.livewire.on('change-focus', function () {
         $("#udid").focus();
+        console.log('$("#udid")');
         alert("#udid")
             
         });
