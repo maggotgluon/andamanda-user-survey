@@ -67,5 +67,60 @@
             </ul>
 
         </div> -->
+
+        <div  class="col-span-2">
+            <table  class="border w-full">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Score</th>
+                        <th>Location</th>
+                        <th>Wristband</th>
+                        <th>Date Create</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach($answers->sortByDesc('created_at') as $ans)
+                    <tr>
+                        <td class="text-center">{{$ans->id}}</td>
+                        <td class="text-center">{{$ans->socre}}</td>
+                        <td class="text-center">
+                            @switch ($ans->Location)
+                            @case ('172.16.110.196')
+                            Ticketing
+                            @break
+                            @case ('172.16.110.224')
+                            LostAndFound
+                            @break
+                            @case ('172.16.110.246')
+                            Locker
+                            @break
+                            @case ('172.16.110.248')
+                            Retail
+                            @break
+                            @case ('172.16.110.249')
+                            TheVillage
+                            @break
+                            @case ('172.16.110.244')
+                            Tropical
+                            @break
+                            @case ('172.16.110.161')
+                            EmeraldSandbar
+                            @break
+                            @case ('172.16.110.205')
+                            Wavebar
+                            @break
+                            @default
+                            Other
+                            @endswitch
+                            <!-- {{$ans->Location}} -->
+                        </td>
+                        <td>{{base64_encode($ans->user)}}</td>
+                        <td>{{$ans->created_at->diffForHumans(Carbon\Carbon::now())}}</td>
+                    </tr>
+            @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

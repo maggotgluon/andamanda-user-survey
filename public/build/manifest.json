@@ -1,11 +1,15 @@
 {
+  "public/assets/fonts/Taviraj-Regular.otf": {
+    "file": "assets/Taviraj-Regular.01732035.otf",
+    "src": "public/assets/fonts/Taviraj-Regular.otf"
+  },
   "resources/js/app.js": {
     "file": "assets/app.bf869a27.js",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.5d7a914b.css",
+    "file": "assets/app.59163f87.css",
     "src": "resources/css/app.css",
     "isEntry": true
   }

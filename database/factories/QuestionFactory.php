@@ -17,7 +17,8 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'Question' => 'How do you like our park',
+            'status' => true,
         ];
     }
 }

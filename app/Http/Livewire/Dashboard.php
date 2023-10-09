@@ -13,7 +13,7 @@ class Dashboard extends Component
 {
     public $average;
     public $types = ['1', '2', '3', '4', '5'];
-
+    public $answer;
     public $colors = [
         '1' => '#f6ad55',
         '2' => '#fc8181',
@@ -23,11 +23,14 @@ class Dashboard extends Component
     ];
     public function render()
     {
-        $answer = Answer::whereIn('questions_id',[1])->orderBy('socre', 'desc')->get();
+        $this->answer = Answer::whereIn('questions_id',[2])
+        ->orderBy('socre', 'desc')
+        // ->orderBy('created_at', 'desc')
+        ->get();
         $now = new Carbon();
         // dd($answer->where('created_at','like','2023-02-24%'),$now);
-        $this->average = round($answer->average('socre'),2);
-        $columnChartModel=$answer->groupBy('socre')
+        $this->average = round($this->answer->average('socre'),2);
+        $columnChartModel=$this->answer->groupBy('socre')
             ->reduce(function ($columnChartModel, $data){
                 $type = $data->first()->socre;
                 $value = $data->count();
@@ -46,7 +49,7 @@ class Dashboard extends Component
         return view('livewire.dashboard')
             ->with([
                 'columnChartModel' => $columnChartModel,
-                'answers'=>$answer
+                'answers'=>$this->answer
                 // 'pieChartModel' => $pieChartModel,
                 // 'lineChartModel' => $lineChartModel,
                 // 'areaChartModel' => $areaChartModel,

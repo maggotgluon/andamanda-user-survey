@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('socre');
             $table->text('Location')->nullable();
             $table->text('deviceAgent')->nullable();
-            $table->text('user')->nullable();
+            $table->text('user');
             $table->timestamps();
         });
     }
