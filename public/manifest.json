@@ -1,0 +1,17 @@
+{
+    "name": "Andamanda Survey Application",
+    "short_name": "ASP",
+    "start_url": "/index.php",
+    "background_color": "#6777ef",
+    "description": "Andamanda Survey Application",
+    "display": "fullscreen",
+    "theme_color": "#6777ef",
+    "icons": [
+        {
+            "src": "assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

@@ -8,9 +8,7 @@
     <div class="{{$udid?'opacity-0':'opacity-100'}} mx-32 my-10">
         <x-input wire:model.lazy="udid" id="udid" label="Scan Wrist Band"
                 class="text-center border-transparent  
-                focus:ring-transparent focus:outline-none focus:border-transparent 
-                focus:outline focus:outline-2 focus:outline-red-400
-                focus:ring focus:ring-red-400 focus:ring-offset-8"
+                focus:ring-transparent focus:outline-none focus:border-transparent"
                 placeholder="Tab here to scan your wrist band" autofocus/>
 
                 <!-- <input wire:model.lazy="udid" id="udid" 
