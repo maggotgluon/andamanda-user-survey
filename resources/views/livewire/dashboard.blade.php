@@ -12,6 +12,35 @@
 
         <x-button rounded warning icon="x" label="Clear" />
     </x-card> -->
+    {{-- <div>
+        <span>data date</span>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>loc</th>
+                        <th>count 1</th>
+                        <th>count 2</th>
+                        <th>count 3</th>
+                        <th>count 4</th>
+                        <th>count 5</th>
+                        <th>count Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>location name</th>
+                        <td>x (xx.xx%)</td>
+                        <td>x (xx.xx%)</td>
+                        <td>x (xx.xx%)</td>
+                        <td>x (xx.xx%)</td>
+                        <td>x (xx.xx%)</td>
+                        <td>sum</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> --}}
     <div class="grid grid-cols-2 my-8 gap-4">
         <div  class="">
             <x-card title="Average Score">
@@ -80,7 +109,7 @@
                     </tr>
                 </thead>
                 <tbody>
-            @foreach($answers->sortByDesc('created_at') as $ans)
+                    @foreach($answers->sortByDesc('created_at') as $ans)
                     <tr>
                         <td class="text-center">{{$ans->id}}</td>
                         <td class="text-center">{{$ans->socre}}</td>
@@ -118,7 +147,7 @@
                         <td>{{base64_encode($ans->user)}}</td>
                         <td>{{$ans->created_at->diffForHumans(Carbon\Carbon::now())}}</td>
                     </tr>
-            @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>

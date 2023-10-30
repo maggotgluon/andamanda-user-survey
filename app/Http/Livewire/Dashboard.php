@@ -8,9 +8,11 @@ use Asantibanez\LivewireCharts\Models\RadarChartModel;
 use Asantibanez\LivewireCharts\Models\TreeMapChartModel;
 use Carbon\Carbon;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Dashboard extends Component
 {
+    use WithPagination;
     public $average;
     public $types = ['1', '2', '3', '4', '5'];
     public $answer;
@@ -24,9 +26,10 @@ class Dashboard extends Component
     public function render()
     {
         $this->answer = Answer::whereIn('questions_id',[2])
-        ->orderBy('socre', 'desc')
+        ->orderBy('socre', 'desc')->get();
+        // dd($this->answer[0]);
         // ->orderBy('created_at', 'desc')
-        ->get();
+        
         $now = new Carbon();
         // dd($answer->where('created_at','like','2023-02-24%'),$now);
         $this->average = round($this->answer->average('socre'),2);
